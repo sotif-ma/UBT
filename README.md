@@ -1,3 +1,27 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:83aa14fbf9bb7ef63a690a1f63193f42b498edaedfdfcb711c648b43c67017fb
-size 17451
+# Uncertainty-based-Transformer-Model-for-Dangerous-Scenarios-Detection-in-Autonomous-Driving
+
+
+# Abstract
+The traditional target detection algorithm in the intelligent vehicle perception system cannot maintain stable recognition performance in the unknown and changing road environment. We find that uncertainty quantification is of great significance in detecting unknown complex environments and helps to improve the robustness and safety of autonomous driving systems. Therefore, this paper proposes a Transformer object detection algorithm based on uncertainty. Firstly, the double Gaussian feature map network (DGF) is designed to quantify and utilize the uncertainty of the features derived from the backbone network. Secondly, we propose a RBF-based query filtering model(RBQF), which takes uncertainty sum as the index of query vector screening. At the same time, this paper proposes an uncertainty detection head (UDH); the final model output results are quantitative uncertainty, improved detection performance and enhanced algorithm reliability. To further prove the detection performance of the proposed method in real driving scenes, we use COCO, Cityscapes, FoggyCityscapes, RainCityscapes and self-made traffic scene datasets for verification, which shows that our algorithm is well applicable to large datasets and complex road scenes. 
+![fig2](https://github.com/user-attachments/assets/b6ad09e6-30cd-4d60-a7e7-c6834053b509)
+
+
+# Experimental Result
+![85ac448e-7415-4a76-88a3-d6c0eb4b3365](https://github.com/user-attachments/assets/37d0bacf-3cc0-4f3e-93ad-974ea9a5a218)
+![8a0c47e9-b662-4841-955e-af10e45167bf](https://github.com/user-attachments/assets/fb19ed5b-d539-4b79-a829-c9206532c318)
+![1999126c-bc39-4b88-8ef9-ca51c5a0d280](https://github.com/user-attachments/assets/42d1c7d3-535c-4a44-9ed2-13904516b6a0)
+![94482a61-2161-48bb-ad24-ab48e9e5dbb3](https://github.com/user-attachments/assets/b36fa958-30d4-440b-b45c-09ccacb3b29f)
+![289ccde1-6eea-4e24-ba77-8e464ea8334d](https://github.com/user-attachments/assets/cd4a7077-fdbb-490c-a3c3-93e1273dc77b)
+
+To study the recognition of key objects in traffic scenes, we compare the calibration of the four categories of person, bus, car, and motorcycle. Compared with the original model, the confidence of each category model output by our method can have a minor error with the accuracy, and the average confidence is also close to the average accuracy, especially in the category of people, which achieves a good effect. In the category of bus, it can be seen from the confidence distribution map that the proportion of high confidence outputs of our method is high.
+![fig7](https://github.com/user-attachments/assets/0443f1db-007c-4cfb-8eed-109ff12a9807)
+In terms of calibration, on the left side of the plot, the ordinate is the confidence and accuracy, on the right is the ECE value, where higher values indicate less reliable model confidence, and the abscissa is the 0-1 value for x or y regression. From the analysis of the figure, it can be seen that the ECE curve of the proposed method is lower than that of the original model in all aspects. The error is the largest when y is 1 in the category of person, indicating that the position prediction reliability of the model at the edge of the picture is poor. ECE is relatively more prominent in the bus category, while the proposed method still has an inevitable reduction in all positions.
+![fig8](https://github.com/user-attachments/assets/e8885088-8ae3-491e-8366-79a74805c99b)
+The comparison plot of x-y reflects the ECE of different positions in the picture under a specific category. The comparison plot of w-h is related to the size of the model prediction box. The larger the ECE error, the redder the color, and the darker the color. The proposed method has lower ECE values and darker colors at any position and target box size. For the category of people, when w is 0.75 and h is about 0.4, our method has a smaller ECE value than baseline(DINO), indicating that it has a more reliable confidence level for larger prediction boxes. For the category of buses, baseline has a large error when the values of w and h are very small, indicating that its estimation of small targets far away is insufficient. Our method has some relief on this problem.
+![fig9](https://github.com/user-attachments/assets/5899c1a9-d56b-44f0-98f2-9326cfa18103)
+# Ablation experiment
+![de1afe8f-f3fa-40ca-ac58-a8f0cc653b23](https://github.com/user-attachments/assets/d95199bc-965a-4d0f-8e33-56f4ac1e502d)
+# Visual Analysis
+The first legend selects a traffic intensive scene with noticeable foreground and background. For the foreground object, the confidence values of the baseline and our method are 83.7% and 86.1%, respectively. For the controversial target behind the picture, such as the umbrella with only half of the edge exposed, the confidence of baseline and the proposed method are 52.2% and 47.0% respectively, indicating that the proposed method will have higher confidence for the obvious and more confident target, while it will be very cautious for the controversial target. The second and third legends select more complex traffic scenes. Compared with the baseline, our method can output higher confidence for some obvious large targets, has correct output box results for fuzzy small targets, and has more rational confidence judgment, which verifies that our method has better reliability in complex traffic scenes.
+![fig6](https://github.com/user-attachments/assets/35c3aea2-c0a0-4723-8056-66da7fb5a787)
+
