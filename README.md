@@ -3,7 +3,7 @@
 
 # Abstract
 The traditional target detection algorithm in the intelligent vehicle perception system cannot maintain stable recognition performance in the unknown and changing road environment. We find that uncertainty quantification is of great significance in detecting unknown complex environments and helps to improve the robustness and safety of autonomous driving systems. Therefore, this paper proposes a Transformer object detection algorithm based on uncertainty. Firstly, the double Gaussian feature map network (DGF) is designed to quantify and utilize the uncertainty of the features derived from the backbone network. Secondly, we propose a RBF-based query filtering model(RBQF), which takes uncertainty sum as the index of query vector screening. At the same time, this paper proposes an uncertainty detection head (UDH); the final model output results are quantitative uncertainty, improved detection performance and enhanced algorithm reliability. To further prove the detection performance of the proposed method in real driving scenes, we use COCO, Cityscapes, FoggyCityscapes, RainCityscapes and self-made traffic scene datasets for verification, which shows that our algorithm is well applicable to large datasets and complex road scenes. 
-![fig2](https://github.com/user-attachments/assets/b6ad09e6-30cd-4d60-a7e7-c6834053b509)
+<div align=center>![fig2](https://github.com/user-attachments/assets/b6ad09e6-30cd-4d60-a7e7-c6834053b509)</div>
 
 
 # Experimental Result
