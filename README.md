@@ -1,1 +1,15 @@
 # Uncertainty-based-Transformer-Model-for-Dangerous-Scenarios-Detection-in-Autonomous-Driving
+This repository contains some of the OOD detection methods mentioned in the review, as well as relevant datasets in the field of autonomous driving.(To protect the originality of the paper, the complete paper and associated code will be made public after the paper is accepted)
+
+# Abstract
+The traditional target detection algorithm in the intelligent vehicle perception system cannot maintain stable recognition performance in the unknown and changing road environment. We find that uncertainty quantification is of great significance in detecting unknown complex environments and helps to improve the robustness and safety of autonomous driving systems. Therefore, this paper proposes a Transformer object detection algorithm based on uncertainty. Firstly, the double Gaussian feature map network (DGF) is designed to quantify and utilize the uncertainty of the features derived from the backbone network. Secondly, we propose a RBF-based query filtering model(RBQF), which takes uncertainty sum as the index of query vector screening. At the same time, this paper proposes an uncertainty detection head (UDH); the final model output results are quantitative uncertainty, improved detection performance and enhanced algorithm reliability. To further prove the detection performance of the proposed method in real driving scenes, we use COCO, Cityscapes, FoggyCityscapes, RainCityscapes and self-made traffic scene datasets for verification, which shows that our algorithm is well applicable to large datasets and complex road scenes. 
+![fig2](https://github.com/user-attachments/assets/b6ad09e6-30cd-4d60-a7e7-c6834053b509)
+
+
+# Experimental Result
+![fig7](https://github.com/user-attachments/assets/0443f1db-007c-4cfb-8eed-109ff12a9807)
+![fig8](https://github.com/user-attachments/assets/e8885088-8ae3-491e-8366-79a74805c99b)
+![fig9](https://github.com/user-attachments/assets/5899c1a9-d56b-44f0-98f2-9326cfa18103)
+# Visual Analysis
+The first legend selects a traffic intensive scene with noticeable foreground and background. For the foreground object, the confidence values of the baseline and our method are 83.7$\text { \% }$ and 86.1$\text { \% }$, respectively. For the controversial target behind the picture, such as the umbrella with only half of the edge exposed, the confidence of baseline and the proposed method are 52.2$\text { \% }$ and 47.0$\text { \% }$ respectively, indicating that the proposed method will have higher confidence for the obvious and more confident target, while it will be very cautious for the controversial target. The second and third legends select more complex traffic scenes. Compared with the baseline, our method can output higher confidence for some obvious large targets, has correct output box results for fuzzy small targets, and has more rational confidence judgment, which verifies that our method has better reliability in complex traffic scenes.
+![fig6](https://github.com/user-attachments/assets/35c3aea2-c0a0-4723-8056-66da7fb5a787)
